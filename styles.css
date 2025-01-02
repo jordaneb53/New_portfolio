@@ -1,0 +1,147 @@
+/* Mode sombre et clair */
+
+/* Variables de couleur */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --nav-bg-color: white;
+    --nav-text-color: black;
+    --link-hover-color: #007bff;
+}
+
+/* Mode sombre */
+body.dark {
+    --bg-color: black;
+    --text-color: white;
+    --nav-bg-color: black;
+    --nav-text-color: white;
+    --link-hover-color: #66b3ff;
+}
+
+/* Appliquer les variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* Nav bar */
+.nav-list {
+    list-style: none;   /* Supprime les puces */
+    padding: 0;         /* Supprime le padding */
+    margin: 0;          /* Supprime le margin */
+    display: flex;      /* Affiche les éléments sur une ligne */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    background-color: var(--nav-bg-color);
+}
+
+/* Style des éléments de la liste */
+.nav-item {
+    margin: 0 10px;  /* Espacement horizontal entre les éléments */
+}
+
+/* Style des liens */
+.nav-link {
+    text-decoration: none; /* Supprime le souligné par défaut */
+    color: var(--nav-text-color);          /* Couleur du texte */
+    font-size: 16px;       /* Taille de la police */
+    padding: 10px 15px;    /* Espacement interne des liens */
+    transition: color 0.3s, ease; /* Animation pour changement de couleur */
+}
+
+/* Changer la couleur au survol */
+.nav-link:hover {
+    color: var(--link-hover-color);
+}
+
+/* Appliquer les styles aux images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+body.dark img {
+    opacity: 0.8; /* Exemple d'effet d'image pour le mode sombre */
+}
+
+/* logo */
+.logo {
+    width: auto; /* Laisse l'espace nécessaire en fonction de la hauteur de l'image */
+    height: 350px; /* Laisse la hauteur de l'image telle qu'elle est, ou ajustez-la */
+    display: inline-block;
+}
+
+/* Style pour l'image dans le logo */
+.logo img {
+    width: auto; /* La largeur est calculée automatiquement pour respecter la proportion */
+    height: 250px; /* Vous pouvez ajuster la hauteur ici */
+    object-fit: cover; /* Cette propriété permet de couvrir l'espace sans déformer l'image */
+    border-radius: 50%; /* Cela rendra l'image ronde */
+}
+
+/* Bouton radio pour le mode sombre */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Ajoute un peu d'espace avant le bouton radio */
+}
+
+/* Icônes Sun et Moon */
+.icon-sun, .icon-moon {
+    width: 20px;  /* Taille des icônes */
+    height: 20px; /* Taille des icônes */
+    margin: 0 5px; /* Espacement entre les icônes et le bouton radio */
+    display: inline-block; /* Assurez-vous que l'icône reste sur la même ligne */
+}
+
+/* Assurez-vous que les images à l'intérieur des icônes s'ajustent correctement */
+.icon-sun img, .icon-moon img {
+    width: 100%;  /* L'image prendra toute la largeur de son conteneur */
+    height: 100%; /* L'image prendra toute la hauteur de son conteneur */
+    object-fit: contain;  /* L'image s'ajustera sans déformation */
+}
+
+/* Bouton radio */
+input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+/* Le bouton rond à l'intérieur */
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+/* Mode sombre activé */
+input[type="checkbox"]:checked {
+    background-color: grey;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
+
+
