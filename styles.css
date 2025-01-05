@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 /* Mode sombre et clair */
 
 /* Variables de couleur */
@@ -7,6 +8,11 @@
     --nav-bg-color: white;
     --nav-text-color: black;
     --link-hover-color: #007bff;
+    /* Couleurs pour la carte */
+    --card-front-bg: #f9f9f9;
+    --card-back-bg: rgba(255, 255, 255, 0.8);
+    --card-hover-transform: translateX(100%);
+    --card-hover-blur: blur(2px);
 }
 
 /* Mode sombre */
@@ -16,13 +22,18 @@ body.dark {
     --nav-bg-color: black;
     --nav-text-color: white;
     --link-hover-color: #66b3ff;
+      /* Couleurs pour la carte */
+    --card-front-bg: #333;
+    --card-back-bg: rgba(0, 0, 0, 0.8);
+    --card-hover-transform: translateX(100%);
+    --card-hover-blur: blur(2px);
 }
 
 /* Appliquer les variables */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", serif;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -31,9 +42,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid var(--text-color);
-}
-
+    
+} 
 /* Nav bar */
 .nav-list {
     list-style: none;   /* Supprime les puces */
@@ -51,7 +61,7 @@ header {
 
 /* Style des liens */
 .nav-link {
-    text-decoration: none; /* Supprime le souligné par défaut */
+    text-decoration:none; /* Supprime le souligné par défaut */
     color: var(--nav-text-color);          /* Couleur du texte */
     font-size: 16px;       /* Taille de la police */
     padding: 10px 15px;    /* Espacement interne des liens */
@@ -75,17 +85,34 @@ body.dark img {
 /* logo */
 .logo {
     width: auto; /* Laisse l'espace nécessaire en fonction de la hauteur de l'image */
-    height: 350px; /* Laisse la hauteur de l'image telle qu'elle est, ou ajustez-la */
+    height: 150px; /* Laisse la hauteur de l'image telle qu'elle est, ou ajustez-la */
     display: inline-block;
+    perspective: 1000px;
 }
-
+/* Animation clé */
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
 /* Style pour l'image dans le logo */
 .logo img {
     width: auto; /* La largeur est calculée automatiquement pour respecter la proportion */
-    height: 250px; /* Vous pouvez ajuster la hauteur ici */
+    height: 150px; /* Vous pouvez ajuster la hauteur ici */
     object-fit: cover; /* Cette propriété permet de couvrir l'espace sans déformer l'image */
     border-radius: 50%; /* Cela rendra l'image ronde */
+    animation: flip 5s infinite linear; /* Animation continue de 3 secondes */
+    transform-style: preserve-3d; /* Nécessaire pour les effets 3D */
+
+
 }
+
 
 /* Bouton radio pour le mode sombre */
 .theme-toggle-container {
@@ -144,4 +171,238 @@ input[type="checkbox"]:checked::before {
     transform: translateX(20px);
 }
 
+.container-titre{
+    text-align: center;
+    padding-top: 200px;
+    
+}
 
+.text{
+    text-align: center
+}   
+.contenaire {
+    display: flex; /* Utilise Flexbox pour le conteneur */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Aligne verticalement les éléments */
+    padding: 10px;
+}   
+    
+
+
+
+
+
+/* card de profil*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*FRONT*/
+@media screen and (max-width: 980px){
+
+.card:hover .front {
+    transform: translateY(-25%) !important;
+    background-position: right;
+}
+.card:hover .container-info{
+    transform: translateY(45%) !important;
+    backdrop-filter: blur(2px);
+    transform: var(--card-hover-transform);
+    backdrop-filter: var(--card-hover-blur);
+    padding-top: 50%;
+}
+
+}    
+
+.card{
+    position: relative;
+    width: 250px;
+    height: 350px;  
+    margin-top: 100px;
+    background-color: var(--card-front-bg);
+    transition: background-color 0.3s, transform 0.3s;
+}
+.front,.back{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 5px 0px #2189f9;
+}
+.front img{
+    width: 70%;
+    border-radius: 50%;
+}
+.front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; 
+    background: rgb(0,0,0);
+    background: linear-gradient(
+    130deg,
+    rgba(0,0,0,1) 38%,
+    rgba(255,255,255,1) 66%, 
+    rgba(255,255,255,1) 69%, 
+    rgba(0,0,0,1) 80%); 
+    background-size: 250% 100%;
+    z-index: 1;
+}
+.front h3{
+    color:  #2189f9;
+    font-family: "Lobster Two", serif;
+    font-weight: normal;
+    font-size: 1.1rem;
+    /*text-shadow: 1px 2px 1px #ccc;*/
+
+}
+.vignette{
+    position: absolute;
+    top: 0; 
+    right: 5%;
+    background-color:  #ccc;
+    width: 11%;
+    height: 10%;
+    clip-path: polygon(100% 0, 100% 100%, 50% 80%, 0 100%, 0 0);
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+/*BACK*/
+.back{
+    background-color: gray;
+    text-align: center;
+    font-family: "Lobster Two", serif;
+    background-image:url(https://st5.depositphotos.com/23188010/77059/i/450/depositphotos_770594060-stock-photo-digital-data-processing-background-abstract.jpg) ;
+    background-size: 250% 100%; 
+}
+.container-info{
+    color: var(--text-color);
+    padding: 5px 0 ;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    width: 0%;
+    background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    #007bff,
+    rgba(0, 0, 0, 0)
+    );
+    transition: all 2s ease-in-out;
+}
+hr.style-hr {
+    border: 15;
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        #0364cb,
+        rgba(0, 0, 0, 0)
+    );
+    transition: all 2s ease-in-out;
+}
+
+.back h3{
+    font-weight: normal;
+    margin: 5px;
+}
+.fa-brands{
+    color: #007bff;
+    font-size: 2.5rem;
+    transition: all 0.5s ;
+    padding: 5px;
+}
+.fa-brands:hover{
+    transform: scale(1.2);
+    text-shadow:  1px 3px 2px #000;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.fa-github:hover{
+    color: black;
+}
+.fa-github{
+    color: #000;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.card:hover .front {
+    transform: translateX(-70%);
+    background-position: right;
+}
+.card:hover .vignette{
+    background-color:#000 ;  
+}
+.card:hover .back {
+    transform: scale(1.5);
+    background-position: center center;
+}
+.card:hover .container-info{
+    transform: translateX(100%);
+    backdrop-filter: blur(2px);
+    transform: var(--card-hover-transform);
+    backdrop-filter: var(--card-hover-blur);
+    padding-top: 50%;
+}
+.card:hover hr{
+    transition-delay: 0.3s;
+    width: 90%;
+    
+}
+/* Survol de la carte */
+.card:hover .container-info {
+    transform: var(--card-hover-transform);
+    backdrop-filter: var(--card-hover-blur);
+    padding-top: 50%;
+    color: var(--text-color); /* Conserve la couleur dynamique sur le survol */
+}
+/* Progress bar */
+.progress {
+    height: 10px;
+    margin-left: 50px;
+    
+}
+
+.progress-bar {
+    transition: width 1.5s ease-in-out;
+    width: 0%;   
+}
+h2{
+    margin-top: 30px;
+    margin-bottom: 2px;
+}
+.col-6{
+    margin-right: 100px;
+}
+/* Citations */
+#quote {
+    font-size: 24px;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+#quote.show {
+    opacity: 1;
+}
+#downloadCvBtn {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#downloadCvBtn:hover {
+    background-color: #0056b3;
+}
