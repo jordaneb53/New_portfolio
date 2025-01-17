@@ -44,7 +44,13 @@ header {
     align-items: center;
     padding: 1rem;
 }
-
+.presentation {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    flex-direction: row;
+    width: 100%;
+}
 /* Nav bar */
 .nav-list {
     list-style: none;
