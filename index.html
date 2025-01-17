@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRAUN Jordane</title>
+    <title>Portfolio|BRAUN Jordane</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="bootstrap.bundle.min.js" defer></script>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_warm_up" />
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- div pour le fond écran animé -->
     <div id="particles-js"></div> <!-- stats - count particles -->
     <header>
+        <!-- div pour le logo -->
         <div class="logo">
             <img src="image/jb.png" alt="logo">
         </div>
+        <!-- div pour le burger menu -->
         <button class="hamburger" id="btnmenu" aria-label="Toggle navigation">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
         </button>
         <nav>
+            <!-- div pour la barre de navigation -->
             <ul class="nav-list"">
                 <li class="nav-item"><a class="nav-link" href="#about">Profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="#Compétence">Compétence</a></li>
@@ -41,7 +45,7 @@
                 </li>
             </ul>
         </nav>
-         
+         <!-- div pour la barre de navigation en version mobile -->
         <ul class="nav-list" id="navigationtel">
             <li class="nav-item"><a class="nav-link" href="#about">Profil</a></li>
             <li class="nav-item"><a class="nav-link" href="#Compétence">Compétence</a></li>
@@ -57,11 +61,14 @@
     
     
     <main>
+        <!-- div pour le scrolbutton -->
         <div class="scrolbuton"></div>
         <div>
+            <!-- trait de séparation des différentes parties -->
             <hr class="style-hr">
         </div>
-        <div style="display:flex; justify-content: center; flex-wrap: wrap; flex-direction: row; width: 100%;">
+        <!-- div pour la presentation avec l'animation de ma carte de presentation -->
+        <div  class="presentation">
             <div class="card">
                 <div class="front">
                     <div class="vignette">🔷</div>
@@ -85,6 +92,7 @@
                 </div>
             </div>
         </div>
+        <!-- div pour mon profil -->
             <section id="about">
                 <div class="container mt-5">
                     <div class="row justify-content-center align-items-center vh-1000">
@@ -100,6 +108,7 @@
             </section>
             <hr class="style-hr">
         </div>
+        <!-- div pour mes competences  -->
         <section id="Compétence"></section>
         <div class="container-titre">
                 <div class="row justify-content-center align-items-center">
@@ -113,6 +122,7 @@
         <div>
             <hr class="style-hr">
         </div>
+        <!-- div pour mes competences et expériences dont mes progresses bar et mon cv -->
         <div class="container">
             <div class="row">
                 <!-- Back-End Section -->
@@ -189,6 +199,7 @@
                 </div>
             </div>
         </div>
+        <!-- div pour mes projets -->
         <section id="projet"></section>
             <div class="container py-5">
                 <div class="row justify-content-center align-items-center">
@@ -249,6 +260,7 @@
         </div>
 
     </main>
+    <!-- footer avec les liens utilses -->
     <footer class="bg-dark text-bg-dark">
         <div class="container py-5">
             <div class="row">
