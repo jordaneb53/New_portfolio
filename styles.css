@@ -136,51 +136,7 @@ header {
     font-size: 30px;
 }
 
-/* Masquer la navigation par défaut sur les petits écrans */
-@media (max-width: 768px) {
-    img {
-        max-width: 100% !important;
-    }
 
-    footer {
-        text-align: center;
-    }
-
-
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        box-shadow: 0px 2px 0 2px rgba(0, 0, 0, 0.7);
-        padding-bottom: 10px;
-        top: 60px;
-        right: 0;
-        margin-right: 10px;
-        background-color: var(--nav-bg-color);
-        border: 1px solid var(--link-hover-color);
-        width: 200px;
-        border-radius: 5px;
-        z-index: 1000;
-    }
-
-    #about {
-        margin-top: 200px;
-    }
-
-
-    .nav-list.active {
-        display: flex;
-        /* Affiche le menu lorsque la classe active est ajoutée */
-    }
-
-    .hamburger {
-        display: flex;
-        /* Affiche le bouton hamburger sur les petits écrans */
-    }
-    .photo_profil {
-        margin-top: 20%;
-}
-}
 
 #navigationtel {
     display: none;
@@ -728,4 +684,78 @@ canvas {
     50% {
         opacity: 0;
     }
+}
+/* Masquer la navigation par défaut sur les petits écrans */
+@media (max-width: 768px) {
+    img {
+        max-width: 100% !important;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        box-shadow: 0px 2px 0 2px rgba(0, 0, 0, 0.7);
+        padding-bottom: 10px;
+        top: 60px;
+        right: 0;
+        margin-right: 10px;
+        background-color: var(--nav-bg-color);
+        border: 1px solid var(--link-hover-color);
+        width: 200px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    #about {
+        margin-top: 200px;
+    }
+    #about img {    
+        margin-left: 20%;
+    }
+    #about h3 {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    #about p {
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+    .nav-list.active {
+        display: flex;
+        /* Affiche le menu lorsque la classe active est ajoutée */
+    }
+
+    .hamburger {
+        display: flex;
+        /* Affiche le bouton hamburger sur les petits écrans */
+    }
+    .photo_profil {
+        margin-top: 20%;
+}
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 1000%;
+    background-color:var(--bg-color);
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: repeat;
+    background-position: 50% 50%;
+    z-index: -99999;;
+} 
+}
+#projet .card {
+    max-width: 100%; /* Assure que la card ne dépasse jamais la largeur de son conteneur */
+    margin: auto; /* Centre la card dans son conteneur */
+}
+.text {
+    margin-left: 30px; /* Ajustez pour vos besoins */
+    margin-right: 20px;
 }
